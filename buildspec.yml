@@ -1,0 +1,11 @@
+
+version: 0.2
+phases:
+  build:
+    commands:
+      - zip -r function.zip .
+  post_build:
+    commands:
+    - echo "Updating lambda function.."
+    - aws lambda update-function-code --function-name purge-sqs-random --zip-file fileb://function.zip
+    - echo "DONE!!"
