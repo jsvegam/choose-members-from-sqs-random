@@ -7,5 +7,5 @@ phases:
   post_build:
     commands:
     - echo "Updating lambda function.."
-    - aws lambda update-function-code --function-name purge-sqs-random --zip-file fileb://function.zip
+    - aws lambda update-function-code --function-name choose-members-from-sqs-random --zip-file fileb://function.zip
     - echo "DONE!!"
